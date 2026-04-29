@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------
-# src/circle_diagram.py
+# src/heylandcircle/circle_diagram.py
 #
 # Core engine for the Heyland circle diagram construction and analysis.
 # Encapsulates geometry building, performance computation, and plotting

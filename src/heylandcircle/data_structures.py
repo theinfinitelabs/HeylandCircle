@@ -1,3 +1,18 @@
+# ---------------------------------------------------------------------
+# src/heylandcircle/data_structures.py
+#
+# Data containers for HeylandCircle.
+# Defines dataclasses for machine test inputs, geometric primitives,
+# and computed performance results used throughout the package.
+#
+# Author:       Anubhav Gupta
+# Affiliation:  University of Colorado Boulder
+#               In Orbit Aerospace
+# Organization: Infinite Labs
+# License:      MIT
+# ---------------------------------------------------------------------
+
+
 from dataclasses import dataclass, field
 
 
