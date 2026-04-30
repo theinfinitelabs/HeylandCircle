@@ -44,7 +44,18 @@ class Circle:
     center: Point
     r: float
 
-
+@dataclass
+class Line:
+    """Represents a line in one of three forms (set exactly one group):
+        - Normal:     m and c   →  y = mx + c
+        - Vertical:   x_vert   →  x = const
+        - Horizontal: y_horz   →  y = const
+    """
+    m:      float | None = None
+    c:      float | None = None
+    x_vert: float | None = None
+    y_horz: float | None = None
+    
 @dataclass
 class CircleResults:
     # Geometric units
