@@ -14,6 +14,10 @@
 
 
 import numpy as np
+import sys
+sys.path.append("../src/heylandcircle/")
+
+from heylandcircle.data_structures import MachineTestData, CircleResults, Point, Circle
 
 # ------------------------------------------------------------------
 # Point / scalar utilities
