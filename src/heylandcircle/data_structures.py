@@ -17,6 +17,18 @@ from dataclasses import dataclass, field
 
 
 @dataclass
+class CircleDiagramConfig:
+    """Configuration options for the Circle Diagram."""
+    power_scale: float          # x kW/cm
+    current_scale: float        # 1/x implies 1 cm = x Amps
+    show_eff_scale: bool        # whether to show slip scale on diagram
+    show_slip_scale: bool       # whether to show slip scale on diagram
+    show_pf_curve: bool         # whether to show power factor curve scale on diagram
+    show_full_circle: bool      # whether to show half-circle or full circle diagram
+    show_grid: bool             # whether to show grid lines on diagram
+
+
+@dataclass
 class MachineTestData:
     """Raw test data for the induction machine."""
     I0: float           # No-load current magnitude [A]
