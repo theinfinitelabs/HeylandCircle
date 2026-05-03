@@ -141,7 +141,54 @@ class CircleDiagram:
         )
 
     def _compute_results(self):
-        pass
+        """Populate CircleResults from the geometry."""
+        
+        self.results.total_loss = self.psn.y                            # Vertical distance from A to x-axis
+        self.results.copper_loss = self.psn.y - self.p0.y               # Vertical distance from A to O'B line (y = p0.y)
+        self.results.rotor_copper_loss = self.psn.y - self.pE.y         # Vertical distance from A to E (half of total loss)
+        self.results.fixed_loss = self.p0.y                             # Vertical distance from F to x-axis
+        self.results.max_output = self.pM_O.y - self.pN_O.y             # Vertical distance from M_O to N_O
+        self.results.power_input = self.psn.y                           # Vertical distance from A to x-axis (same as total loss + max output)
+        self.results.max_torque = self.pM_T.y - self.pN_T.y             # Vertical distance from M_T to N_T
+        
+        # Efficiency: horizontal distance from T to Q divided by horizontal distance from T_eff to Q
+        QT     = self.pT.x - self.pQ.x
+        QT_eff = self.pTeff.x - self.pQ.x
+        self.results.efficiency = ( (self.pP.y - self.pQprime.y) / self.pP.y ) * 100
+        
+        # Power factor: angle of load current phasor P with respect to horizontal axis (real axis)
+        I_mag = np.hypot(self.pP.x, self.pP.y)
+        self.results.power_factor = self.pP.y / I_mag
+        self.results.line_current = np.linalg.norm([self.pP.x, self.pP.y])
+        
+        # Slip: ratio of vertical distance from Q' to R' (slip component) to vertical distance from P to R' (total current component)
+        self.results.slip = (self.pQprime.y - self.pRprime.y) / (self.pP.y - self.pRprime.y) * 100
+        
+        # Geometric Slip: from QT using X_slip projection
+        QT = self.pT.x - self.pQ.x                      # Full slip scale length
+        TXprime = self.pT.x - self.pXprime.x            # Position of S on QT
+        s_geom = (TXprime) / QT
+        self.results.slip_geom = s_geom * 100
+
+        # ==========================
+        # Apply scaling if provided
+        # ==========================
+        if self.config.power_scale is not None:
+            self.results.total_loss_kW = self.results.total_loss * self.config.power_scale
+            self.results.copper_loss_kW = self.results.copper_loss * self.config.power_scale
+            self.results.rotor_copper_loss_kW = self.results.rotor_copper_loss * self.config.power_scale
+            self.results.fixed_loss_kW = self.results.fixed_loss * self.config.power_scale
+            self.results.max_output_kW = self.results.max_output * self.config.power_scale
+            self.results.power_input_kW = self.results.power_input * self.config.power_scale
+            self.results.max_torque_kW = self.results.max_torque * self.config.power_scale
+        else:
+            # Scaling disabled → keep None
+            self.results.total_loss_kW = None
+            self.results.copper_loss_kW = None
+            self.results.rotor_copper_loss_kW = None
+            self.results.fixed_loss_kW = None
+            self.results.max_output_kW = None
+            self.results.power_input_kW = None
 
 
     def plot(self, save_path: str | None = None):
