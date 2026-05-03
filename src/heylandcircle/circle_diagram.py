@@ -252,4 +252,47 @@ class CircleDiagram:
         self.y_circle = self.circle.center.y + self.circle.r * np.sin(theta)
         ax.plot(self.x_circle, self.y_circle, color=COLORS["accent"], linewidth=2.0)
 
+        # Vertical from A
+        ax.plot([self.psn.x, self.psn.x], [self.psn.y, 0],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+
+        # Torque line
+        ax.plot([self.p0.x, self.psn.x], [self.p0.y, self.pE.y],
+                color=COLORS["mono"], linestyle="-.", linewidth=1.6, label="Torque Chord")
+
+        # Vertical through A
+        ax.plot([self.psn.x, self.psn.x],
+                [self.psn.y, self.psn.y + self.pE.y],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+
+        # Line from A parallel to output -> P
+        ax.plot([self.psn.x, self.pP.x],
+                [self.psn.y + self.pE.y, self.pP.y],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+
+        # Vertical through P
+        ax.plot([self.pP.x, self.pP.x],
+                [self.pP.y, 0],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+        
+        # Perpendicular bisector to C' and circle
+        ax.plot([self.pCprime.x, self.circle.center.x], [self.pCprime.y, self.circle.center.y],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+        ax.plot([self.pCprime.x, self.pM_O.x], [self.pCprime.y, self.pM_O.y],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+        
+        # Line from M_O down to N_O (max output)
+        ax.plot([self.pM_O.x, self.pM_O.x],
+                [self.pM_O.y, self.pN_O.y],
+                color=COLORS["max_output"], linewidth=1, label="Max Output")
+
+        # Perpendicular to torque line and circle
+        ax.plot([self.pM_T.x, self.circle.center.x], [self.pM_T.y, self.circle.center.y],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+
+        # Line from M_T down to N_T (max torque)
+        ax.plot([self.pM_T.x, self.pM_T.x],
+                [self.pM_T.y, self.pN_T.y],
+                color=COLORS["max_torque"], linestyle=":", linewidth=2.0, label="Max Torque")
+
         return fig, ax
