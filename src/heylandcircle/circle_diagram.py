@@ -20,6 +20,17 @@ import matplotlib.pyplot as plt
 
 from heylandcircle.data_structures import MachineTestData, CircleResults, Point, Line, Circle
 from heylandcircle.geometry import phasor_to_point, slope_from_points, y_intercept, line_circle_intersection, line_line_intersection, distance
+from heylandcircle.plot import plot_phasor, annotate_point, draw_arc
+
+
+COLORS = {
+    "accent": "#1f4e79",      # deep elegant blue
+    "max_output": "#222222",  # black
+    "max_torque": "#8b0000",  # dark muted red
+    "mono": "#444444",        # main gray
+    "light": "#aaaaaa",       # auxiliary construction
+}
+
 
 class CircleDiagram:
     """Encapsulates geometry, analysis, and plotting of the Heyland circle."""
@@ -192,4 +203,36 @@ class CircleDiagram:
 
 
     def plot(self, save_path: str | None = None):
-        pass
+        """Build geometry, compute results, and generate the circle diagram plot."""
+        self._build_geometry()
+        self._compute_results()
+
+        plt.rcParams["figure.dpi"] = 200
+        plt.rcParams["font.family"] = "DejaVu Sans"  # or 'Times New Roman' for IEEE
+        plt.rcParams["mathtext.fontset"] = "cm"       # LaTeX-like math
+
+        fig, ax = plt.subplots(figsize=(8, 6))
+        ax.set_aspect("equal", "box")
+        ax.set_xlabel("Reactive Current (A)")
+        ax.set_ylabel("Active Current (A)")
+        for spine in ax.spines.values():
+            spine.set_visible(False)
+
+        if not self.config.show_full_circle:
+            xmin = 0
+            xmax = max(self.pT.x, self.psn.x, self.pQ.x) * 1.1
+            ymin = 0
+            ymax = max(self.pT.y, self.pM_O.y) * 1.25
+
+            ax.set_xlim(xmin, xmax)
+            ax.set_ylim(ymin, ymax)
+        
+        ax.axhline(0, color="#222222", linewidth=1.5)
+        ax.axvline(0, color="#222222", linewidth=1.5)
+
+        # Phasors
+        plot_phasor(ax, self.p0, label="$I_0$", color=COLORS["mono"])
+        plot_phasor(ax, self.psn, label="$I_{SN}$", color=COLORS["mono"])
+
+
+        return fig, ax
