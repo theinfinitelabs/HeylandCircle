@@ -14,13 +14,12 @@
 
 from __future__ import annotations
 import sys
-sys.path.append("../src/heylandcircle/")
+sys.path.append("../src/heylandcircle/")                # TODO: Should be handled through pyproject.toml or setup.py
 import numpy as np
 import matplotlib.pyplot as plt
 
 from heylandcircle.data_structures import MachineTestData, CircleResults, Point, Line, Circle
 from heylandcircle.geometry import phasor_to_point, slope_from_points, y_intercept, line_circle_intersection, line_line_intersection, distance
-
 
 class CircleDiagram:
     """Encapsulates geometry, analysis, and plotting of the Heyland circle."""
