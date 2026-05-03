@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 
 from heylandcircle.data_structures import MachineTestData, CircleResults, Point, Line, Circle
 from heylandcircle.geometry import phasor_to_point, slope_from_points, y_intercept, line_circle_intersection, line_line_intersection, distance
-from heylandcircle.plot import plot_phasor, annotate_point, draw_arc
+from heylandcircle.plot import plot_phasor, draw_arc
 
 
 COLORS = {
@@ -234,5 +234,22 @@ class CircleDiagram:
         plot_phasor(ax, self.p0, label="$I_0$", color=COLORS["mono"])
         plot_phasor(ax, self.psn, label="$I_{SN}$", color=COLORS["mono"])
 
+        # Horizontal line from O'
+        xmax = ax.get_xlim()[1]
+        ax.hlines(y=self.p0.y, xmin=self.p0.x, xmax=xmax*1.1,
+                  colors=COLORS["light"], linestyles="--", linewidth=1)
+
+        # Output line
+        ax.plot([self.p0.x, self.psn.x], [self.p0.y, self.psn.y],
+                color=COLORS["mono"], linestyle="--", linewidth=1.6, label="Output Line")
+
+        # Main circle
+        if self.config.show_full_circle:
+            theta = np.linspace(0, 2 * np.pi, 600)
+        else:
+            theta = np.linspace(0, np.pi, 600)
+        self.x_circle = self.circle.center.x + self.circle.r * np.cos(theta)
+        self.y_circle = self.circle.center.y + self.circle.r * np.sin(theta)
+        ax.plot(self.x_circle, self.y_circle, color=COLORS["accent"], linewidth=2.0)
 
         return fig, ax
