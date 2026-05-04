@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 
 from heylandcircle.data_structures import MachineTestData, CircleResults, Point, Line, Circle
 from heylandcircle.geometry import phasor_to_point, slope_from_points, y_intercept, line_circle_intersection, line_line_intersection, distance
-from heylandcircle.plot import plot_phasor, draw_arc
+from heylandcircle.plot import plot_phasor, draw_arc, annotate_point
 
 
 COLORS = {
@@ -294,5 +294,94 @@ class CircleDiagram:
         ax.plot([self.pM_T.x, self.pM_T.x],
                 [self.pM_T.y, self.pN_T.y],
                 color=COLORS["max_torque"], linestyle=":", linewidth=2.0, label="Max Torque")
+
+        if self.config.show_eff_scale:
+            # Output line extended to T'
+            ax.plot([self.p0.x, self.pTprime.x],
+                    [self.p0.y, self.pTprime.y],
+                    color=COLORS["light"], linestyle="--", linewidth=1)
+
+            # Perpendicular up to T
+            ax.plot([self.pT.x, self.pT.x], [0, self.pT.y],
+                    color=COLORS["light"], linestyle="--", linewidth=1)
+
+            # Extend the output line to Q
+            ax.plot([self.psn.x, self.pQ.x],
+                    [self.psn.y, self.pQ.y],
+                    color="k", linewidth=1)
+
+            # Efficiency line QT
+            ax.plot([self.pQ.x, self.pTprime.x],
+                    [self.pQ.y, self.pQ.y],
+                    color=COLORS["mono"], linestyle="dashdot", linewidth=1.2, label="Efficiency Line")
+
+            # Line OP intersecting QT at T_eff
+            ax.plot([0, self.pP.x], [0, self.pP.y],
+                    color=COLORS["light"], linestyle="--", linewidth=1)
+            ax.plot([self.pP.x, self.pTeff.x],
+                    [self.pP.y, self.pTeff.y],
+                    color=COLORS["light"], linestyle="--", linewidth=1)
+
+        if self.config.show_slip_scale:
+            # O' vertical
+            ax.plot([self.p0.x, self.p0.x], [0, self.pX.y],
+                    color="gray", linestyle="--", linewidth=1)
+
+            # Slip line QX and X_slip
+            ax.plot(
+                [self.pQ.x, self.pX.x],
+                [self.pQ.y, self.pX.y],
+                color="tab:green",
+                linestyle="-",
+                linewidth=1.2,
+                label="Slip Calibration Line (QR)"
+            )
+
+            ax.plot([self.p0.x, self.pXslip.x],
+                    [self.p0.y, self.pXslip.y],
+                    color="gray", linestyle="--", linewidth=1)
+            ax.plot([self.pXprime.x, self.pXslip.x],
+                    [self.pXprime.y, self.pXslip.y],
+                    color="gray", linestyle="--", linewidth=1)
+            annotate_point(ax, self.pX, "X")
+            annotate_point(ax, self.pXslip, "X_slip")
+            annotate_point(ax, self.pXprime, "X'")
+
+        # Power factor arc
+        if self.config.show_pf_curve:
+            draw_arc(ax, center=Point(0, 0), radius=self.pT.y * 0.9,
+                    start_angle_deg=40, end_angle_deg=90,
+                    color="tab:purple", linestyle="--",
+                    label="Power Factor curve")
+
+        annotate_point(ax, Point(0,0), "O")
+        annotate_point(ax, self.p0, "O'")
+        annotate_point(ax, self.psn, "A")
+        # annotate_point(ax, Point(self.psn.x, 0), "B")
+        annotate_point(ax, self.pCprime, "C'")
+        annotate_point(ax, Point(self.circle.center.x, self.circle.center.y), "C")
+        annotate_point(ax, Point(self.x_circle[0], self.y_circle[0]), "D")
+        annotate_point(ax, self.pE, "E")
+        annotate_point(ax, Point(self.psn.x, self.p0.y), "F")
+        annotate_point(ax, Point(self.psn.x, self.psn.y + self.pE.y), "S")
+        annotate_point(ax, self.pP, "P")
+        annotate_point(ax, self.pQprime, "Q'")
+        annotate_point(ax, self.pRprime, "R'", x_offset=-0.05, y_offset=0.3)
+        annotate_point(ax, self.pM_O, r"M$_O$", x_offset=-0.03, y_offset=0.03)
+        annotate_point(ax, self.pN_O, r"N$_O$", x_offset=-0.03, y_offset=0.03)
+        annotate_point(ax, self.pM_T, r"M$_T$", x_offset=0.03, y_offset=0.03)
+        annotate_point(ax, self.pN_T, r"N$_T$", x_offset=0.03, y_offset=0.03)
+        if self.config.show_eff_scale:
+            annotate_point(ax, self.pTprime, "T'")
+            annotate_point(ax, self.pT, "T")
+            annotate_point(ax, self.pQ, "Q")
+            annotate_point(ax, self.pTeff, "T_eff")
+        
+        ax.legend(ncols=3, loc="upper center",
+                  bbox_to_anchor=(0.5, -0.1), frameon=False)
+        plt.tight_layout()
+
+        if save_path:
+            fig.savefig(save_path, dpi=300, bbox_inches="tight")
 
         return fig, ax

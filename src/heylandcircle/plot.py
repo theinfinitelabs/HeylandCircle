@@ -33,7 +33,8 @@ def plot_phasor(
 
 def draw_arc(
     ax: Axes,
-    circle: Circle,
+    center: Point,
+    radius: float,
     start_angle_deg: float,
     end_angle_deg: float,
     color: str = "blue",
@@ -45,7 +46,7 @@ def draw_arc(
 
     Args:
         ax:               Target Matplotlib axes.
-        circle:           Circle whose center and radius define the arc.
+        center:           Center point of the arc.
         start_angle_deg:  Start angle in degrees (Matplotlib convention: CCW from +x).
         end_angle_deg:    End angle in degrees.
         color:            Line color.
@@ -57,8 +58,8 @@ def draw_arc(
         The Arc patch added to ax.
     """
     arc = Arc(
-        (circle.center.x, circle.center.y),
-        2 * circle.r, 2 * circle.r,
+        (center.x, center.y),
+        2 * radius, 2 * radius,
         angle=0,
         theta1=start_angle_deg,
         theta2=end_angle_deg,
@@ -69,3 +70,41 @@ def draw_arc(
     )
     ax.add_patch(arc)
     return arc
+
+
+def annotate_point(
+    ax: Axes,
+    p: Point,
+    text: str,
+    x_offset: float = 0.03,
+    y_offset: float = 0.03,
+    fontsize: int = 9,
+    ha: str = "center",
+    va: str = "center",
+) -> None:
+    """Annotate a point with a text label offset by a fraction of the axis span.
+
+    Args:
+        ax:       Target Matplotlib axes.
+        p:        Point to annotate.
+        text:     Label text.
+        x_offset: Horizontal offset as a fraction of the x-axis span.
+        y_offset: Vertical offset as a fraction of the y-axis span.
+        fontsize: Font size of the label.
+        ha:       Horizontal alignment ('left', 'center', 'right').
+        va:       Vertical alignment ('top', 'center', 'bottom').
+    """
+    xspan = ax.get_xlim()[1] - ax.get_xlim()[0]
+    yspan = ax.get_ylim()[1] - ax.get_ylim()[0]
+
+    ax.text(
+        p.x + x_offset * xspan,
+        p.y + y_offset * yspan,
+        text,
+        fontsize=fontsize,
+        ha=ha,
+        va=va,
+        bbox=dict(facecolor="white", alpha=0.7, edgecolor="none", pad=0.5),
+        zorder=10,
+    )
+    ax.scatter(p.x, p.y, s=10, color="black", zorder=11)
