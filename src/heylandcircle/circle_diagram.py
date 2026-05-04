@@ -20,6 +20,17 @@ import matplotlib.pyplot as plt
 
 from heylandcircle.data_structures import MachineTestData, CircleResults, Point, Line, Circle
 from heylandcircle.geometry import phasor_to_point, slope_from_points, y_intercept, line_circle_intersection, line_line_intersection, distance
+from heylandcircle.plot import plot_phasor, draw_arc, annotate_point
+
+
+COLORS = {
+    "accent": "#1f4e79",      # deep elegant blue
+    "max_output": "#222222",  # black
+    "max_torque": "#8b0000",  # dark muted red
+    "mono": "#444444",        # main gray
+    "light": "#aaaaaa",       # auxiliary construction
+}
+
 
 class CircleDiagram:
     """Encapsulates geometry, analysis, and plotting of the Heyland circle."""
@@ -192,4 +203,186 @@ class CircleDiagram:
 
 
     def plot(self, save_path: str | None = None):
-        pass
+        """Build geometry, compute results, and generate the circle diagram plot."""
+        self._build_geometry()
+        self._compute_results()
+
+        plt.rcParams["figure.dpi"] = 200
+        plt.rcParams["font.family"] = "DejaVu Sans"  # or 'Times New Roman' for IEEE
+        plt.rcParams["mathtext.fontset"] = "cm"       # LaTeX-like math
+
+        fig, ax = plt.subplots(figsize=(8, 6))
+        ax.set_aspect("equal", "box")
+        ax.set_xlabel("Reactive Current (A)")
+        ax.set_ylabel("Active Current (A)")
+        for spine in ax.spines.values():
+            spine.set_visible(False)
+
+        if not self.config.show_full_circle:
+            xmin = 0
+            xmax = max(self.pT.x, self.psn.x, self.pQ.x) * 1.1
+            ymin = 0
+            ymax = max(self.pT.y, self.pM_O.y) * 1.25
+
+            ax.set_xlim(xmin, xmax)
+            ax.set_ylim(ymin, ymax)
+        
+        ax.axhline(0, color="#222222", linewidth=1.5)
+        ax.axvline(0, color="#222222", linewidth=1.5)
+
+        # Phasors
+        plot_phasor(ax, self.p0, label="$I_0$", color=COLORS["mono"])
+        plot_phasor(ax, self.psn, label="$I_{SN}$", color=COLORS["mono"])
+
+        # Horizontal line from O'
+        xmax = ax.get_xlim()[1]
+        ax.hlines(y=self.p0.y, xmin=self.p0.x, xmax=xmax*1.1,
+                  colors=COLORS["light"], linestyles="--", linewidth=1)
+
+        # Output line
+        ax.plot([self.p0.x, self.psn.x], [self.p0.y, self.psn.y],
+                color=COLORS["mono"], linestyle="--", linewidth=1.6, label="Output Line")
+
+        # Main circle
+        if self.config.show_full_circle:
+            theta = np.linspace(0, 2 * np.pi, 600)
+        else:
+            theta = np.linspace(0, np.pi, 600)
+        self.x_circle = self.circle.center.x + self.circle.r * np.cos(theta)
+        self.y_circle = self.circle.center.y + self.circle.r * np.sin(theta)
+        ax.plot(self.x_circle, self.y_circle, color=COLORS["accent"], linewidth=2.0)
+
+        # Vertical from A
+        ax.plot([self.psn.x, self.psn.x], [self.psn.y, 0],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+
+        # Torque line
+        ax.plot([self.p0.x, self.psn.x], [self.p0.y, self.pE.y],
+                color=COLORS["mono"], linestyle="-.", linewidth=1.6, label="Torque Chord")
+
+        # Vertical through A
+        ax.plot([self.psn.x, self.psn.x],
+                [self.psn.y, self.psn.y + self.pE.y],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+
+        # Line from A parallel to output -> P
+        ax.plot([self.psn.x, self.pP.x],
+                [self.psn.y + self.pE.y, self.pP.y],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+
+        # Vertical through P
+        ax.plot([self.pP.x, self.pP.x],
+                [self.pP.y, 0],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+        
+        # Perpendicular bisector to C' and circle
+        ax.plot([self.pCprime.x, self.circle.center.x], [self.pCprime.y, self.circle.center.y],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+        ax.plot([self.pCprime.x, self.pM_O.x], [self.pCprime.y, self.pM_O.y],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+        
+        # Line from M_O down to N_O (max output)
+        ax.plot([self.pM_O.x, self.pM_O.x],
+                [self.pM_O.y, self.pN_O.y],
+                color=COLORS["max_output"], linewidth=1, label="Max Output")
+
+        # Perpendicular to torque line and circle
+        ax.plot([self.pM_T.x, self.circle.center.x], [self.pM_T.y, self.circle.center.y],
+                color=COLORS["light"], linestyle="--", linewidth=1)
+
+        # Line from M_T down to N_T (max torque)
+        ax.plot([self.pM_T.x, self.pM_T.x],
+                [self.pM_T.y, self.pN_T.y],
+                color=COLORS["max_torque"], linestyle=":", linewidth=2.0, label="Max Torque")
+
+        if self.config.show_eff_scale:
+            # Output line extended to meet x-axis at point T'
+            ax.plot([self.p0.x, self.pTprime.x],
+                    [self.p0.y, self.pTprime.y],
+                    color=COLORS["light"], linestyle="--", linewidth=1)
+
+            # Vertical from T' to T, parallel to y-axis
+            ax.plot([self.pT.x, self.pT.x], [0, self.pT.y],
+                    color=COLORS["light"], linestyle="--", linewidth=1)
+
+            # Extend the output line to Q
+            ax.plot([self.psn.x, self.pQ.x],
+                    [self.psn.y, self.pQ.y],
+                    color="k", linewidth=1)
+
+            # Efficiency line QT parallel to x-axis
+            ax.plot([self.pQ.x, self.pTprime.x],
+                    [self.pQ.y, self.pQ.y],
+                    color=COLORS["mono"], linestyle="dashdot", linewidth=1.2, label="Efficiency Line")
+
+            # Line OP intersecting QT at T_eff
+            ax.plot([0, self.pP.x], [0, self.pP.y],
+                    color=COLORS["light"], linestyle="--", linewidth=1)
+            ax.plot([self.pP.x, self.pTeff.x],
+                    [self.pP.y, self.pTeff.y],
+                    color=COLORS["light"], linestyle="--", linewidth=1)
+
+        if self.config.show_slip_scale:
+            # O'X parallel to y-axis
+            ax.plot([self.p0.x, self.p0.x], [0, self.pX.y],
+                    color="gray", linestyle="--", linewidth=1)
+
+            # Slip line QX and X_slip
+            ax.plot(
+                [self.pQ.x, self.pX.x],
+                [self.pQ.y, self.pX.y],
+                color="tab:green",
+                linestyle="-",
+                linewidth=1.2,
+                label="Slip Calibration Line (QR)"
+            )
+
+            ax.plot([self.p0.x, self.pXslip.x],
+                    [self.p0.y, self.pXslip.y],
+                    color="gray", linestyle="--", linewidth=1)
+            ax.plot([self.pXprime.x, self.pXslip.x],
+                    [self.pXprime.y, self.pXslip.y],
+                    color="gray", linestyle="--", linewidth=1)
+
+        # Power factor arc
+        if self.config.show_pf_curve:
+            draw_arc(ax, center=Point(0, 0), radius=self.pT.y * 0.9,
+                    start_angle_deg=40, end_angle_deg=90,
+                    color="tab:purple", linestyle="--",
+                    label="Power Factor curve")
+
+        annotate_point(ax, Point(0,0), "O")
+        annotate_point(ax, self.p0, "O'")
+        annotate_point(ax, self.psn, "A")
+        # annotate_point(ax, Point(self.psn.x, 0), "B")
+        annotate_point(ax, self.pCprime, "C'")
+        annotate_point(ax, Point(self.circle.center.x, self.circle.center.y), "C")
+        annotate_point(ax, Point(self.x_circle[0], self.y_circle[0]), "D")
+        annotate_point(ax, self.pE, "E")
+        annotate_point(ax, Point(self.psn.x, self.p0.y), "F")
+        annotate_point(ax, Point(self.psn.x, self.psn.y + self.pE.y), "S")
+        annotate_point(ax, self.pP, "P")
+        annotate_point(ax, self.pQprime, "Q'")
+        annotate_point(ax, self.pRprime, "R'", x_offset=-0.05, y_offset=0.3)
+        annotate_point(ax, self.pM_O, r"M$_O$", x_offset=-0.03, y_offset=0.03)
+        annotate_point(ax, self.pN_O, r"N$_O$", x_offset=-0.03, y_offset=0.03)
+        annotate_point(ax, self.pM_T, r"M$_T$", x_offset=0.03, y_offset=0.03)
+        annotate_point(ax, self.pN_T, r"N$_T$", x_offset=0.03, y_offset=0.03)
+        if self.config.show_eff_scale:
+            annotate_point(ax, self.pTprime, "T'")
+            annotate_point(ax, self.pT, "T")
+            annotate_point(ax, self.pQ, "Q")
+            annotate_point(ax, self.pTeff, "T_eff")
+        if self.config.show_slip_scale:
+            annotate_point(ax, self.pX, "X")
+            annotate_point(ax, self.pXslip, "X_slip")
+            annotate_point(ax, self.pXprime, "X'")
+            
+        ax.legend(ncols=3, loc="upper center",
+                  bbox_to_anchor=(0.5, -0.1), frameon=False)
+        plt.tight_layout()
+
+        if save_path:
+            fig.savefig(save_path, dpi=300, bbox_inches="tight")
+
+        return fig, ax
