@@ -296,12 +296,12 @@ class CircleDiagram:
                 color=COLORS["max_torque"], linestyle=":", linewidth=2.0, label="Max Torque")
 
         if self.config.show_eff_scale:
-            # Output line extended to T'
+            # Output line extended to meet x-axis at point T'
             ax.plot([self.p0.x, self.pTprime.x],
                     [self.p0.y, self.pTprime.y],
                     color=COLORS["light"], linestyle="--", linewidth=1)
 
-            # Perpendicular up to T
+            # Vertical from T' to T, parallel to y-axis
             ax.plot([self.pT.x, self.pT.x], [0, self.pT.y],
                     color=COLORS["light"], linestyle="--", linewidth=1)
 
@@ -310,7 +310,7 @@ class CircleDiagram:
                     [self.psn.y, self.pQ.y],
                     color="k", linewidth=1)
 
-            # Efficiency line QT
+            # Efficiency line QT parallel to x-axis
             ax.plot([self.pQ.x, self.pTprime.x],
                     [self.pQ.y, self.pQ.y],
                     color=COLORS["mono"], linestyle="dashdot", linewidth=1.2, label="Efficiency Line")
@@ -323,7 +323,7 @@ class CircleDiagram:
                     color=COLORS["light"], linestyle="--", linewidth=1)
 
         if self.config.show_slip_scale:
-            # O' vertical
+            # O'X parallel to y-axis
             ax.plot([self.p0.x, self.p0.x], [0, self.pX.y],
                     color="gray", linestyle="--", linewidth=1)
 
@@ -343,9 +343,6 @@ class CircleDiagram:
             ax.plot([self.pXprime.x, self.pXslip.x],
                     [self.pXprime.y, self.pXslip.y],
                     color="gray", linestyle="--", linewidth=1)
-            annotate_point(ax, self.pX, "X")
-            annotate_point(ax, self.pXslip, "X_slip")
-            annotate_point(ax, self.pXprime, "X'")
 
         # Power factor arc
         if self.config.show_pf_curve:
@@ -376,7 +373,11 @@ class CircleDiagram:
             annotate_point(ax, self.pT, "T")
             annotate_point(ax, self.pQ, "Q")
             annotate_point(ax, self.pTeff, "T_eff")
-        
+        if self.config.show_slip_scale:
+            annotate_point(ax, self.pX, "X")
+            annotate_point(ax, self.pXslip, "X_slip")
+            annotate_point(ax, self.pXprime, "X'")
+            
         ax.legend(ncols=3, loc="upper center",
                   bbox_to_anchor=(0.5, -0.1), frameon=False)
         plt.tight_layout()
