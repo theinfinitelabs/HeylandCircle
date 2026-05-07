@@ -15,8 +15,6 @@
 
 import numpy as np
 from typing import Literal
-import sys
-sys.path.append("../src/heylandcircle/")        # TODO: Should be handled through pyproject.toml or setup.py
 
 from heylandcircle.data_structures import MachineTestData, CircleResults, Point, Line, Circle
 
