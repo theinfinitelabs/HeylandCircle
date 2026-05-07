@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+title: "HeylandCircle"
+message: "If you use this software, please cite it using the metadata below."
+type: software
+
+authors:
+  - family-names: "Gupta"
+    given-names: "Anubhav"
+    affiliation: "University of Colorado Boulder; Infinite Labs"
+  - family-names: "Gupta"
+    given-names: "Abhinav"
+    affiliation: "University of Colorado Boulder"
+
+repository-code: "https://github.com/theinfinitelabs/HeylandCircle"
+
+license: MIT
+
+version: 0.1.0
+date-released: 2026-05-11
+
+abstract: >
+  HeylandCircle is an open-source Python package for
+  constructing and analyzing Heyland circle diagrams
+  for induction machines using classical geometric methods.
+
+keywords:
+  - induction machines
+  - electrical machines
+  - heyland circle
+  - circle diagram
+  - power systems
+  - engineering education
+  - scientific computing
+
+preferred-citation:
+  type: software
+  authors:
+    - family-names: "Gupta"
+      given-names: "Anubhav"
+    - family-names: "Gupta"
+      given-names: "Abhinav"
+  title: "HeylandCircle"
+  version: 0.1.0
+  year: 2026
