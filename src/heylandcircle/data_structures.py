@@ -68,6 +68,25 @@ class Line:
     x_vert: float | None = None
     y_horz: float | None = None
     
+    def __post_init__(self):
+        normal = (self.m is not None) or (self.c is not None)
+        vertical = self.x_vert is not None
+        horizontal = self.y_horz is not None
+
+        forms_selected = sum([normal, vertical, horizontal])
+
+        if forms_selected != 1:
+            raise ValueError(
+                "Line must define exactly one form: "
+                "(m,c), x_vert, or y_horz."
+            )
+
+        # Require BOTH m and c for normal form
+        if normal and (self.m is None or self.c is None):
+            raise ValueError(
+                "Normal line form requires both m and c."
+            )
+        
 @dataclass
 class CircleResults:
     # Geometric units
