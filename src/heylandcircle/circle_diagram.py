@@ -13,8 +13,6 @@
 # ---------------------------------------------------------------------
 
 from __future__ import annotations
-import sys
-sys.path.append("../src/heylandcircle/")                # TODO: Should be handled through pyproject.toml or setup.py
 import numpy as np
 import matplotlib.pyplot as plt
 
