@@ -8,9 +8,9 @@ HeylandCircle is a lightweight, modular Python tool for constructing and analyzi
 
 ## ⚡ Quick Start
 ```
-pip install e .
+pip install -e .
 pytest
-python example/motor_circle_diagram.py
+python examples/motor_circle_diagram.py
 ```
 
 ## 🏗️ Structure
