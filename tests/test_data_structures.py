@@ -15,9 +15,9 @@ from heylandcircle.data_structures import (
 
 def test_machine_test_data_starting_current():
     data = MachineTestData(
-        I0=5.0,
-        phi0_deg=80.0,
-        Isc=20.0,
+        I_0=5.0,
+        phi_0_deg=80.0,
+        I_sc=20.0,
         phi_sc_deg=45.0,
         V_rated=400.0,
         V_sc=100.0,
