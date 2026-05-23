@@ -2,22 +2,8 @@
 __pycache__/
 *.py[cod]
 
-# Distribution / packaging
-build/
-dist/
-*.egg-info/
-
-# Virtual environments
-.venv/
-venv/
-env/
-
 # Pytest
 .pytest_cache/
-
-# Coverage
-.coverage
-htmlcov/
 
 # Jupyter
 .ipynb_checkpoints/
@@ -28,16 +14,5 @@ htmlcov/
 # macOS
 .DS_Store
 
-# Matplotlib outputs
-*.png
-*.pdf
-*.svg
-
 # Sphinx
 docs/_build/
-
-# IDEs
-.idea/
-
-# Temporary files
-*.tmp
