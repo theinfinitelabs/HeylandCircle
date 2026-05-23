@@ -3,6 +3,8 @@ HeylandCircle is a lightweight, modular Python tool for constructing and analyzi
 
 [![Tests](https://github.com/theinfinitelabs/HeylandCircle/actions/workflows/ci.yml/badge.svg)](https://github.com/theinfinitelabs/HeylandCircle/actions)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/theinfinitelabs/HeylandCircle/main)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 ![Heyland Circle Diagram](docs/images/circle_diagram.png)
 
@@ -39,12 +41,6 @@ Tests cover:
 - circle construction consistency
 - parameter transformations
 - basic analytical checks
-
-## 🔄 Status
-In development
-
-## 📜 License
-MIT
 
 ## References (Select)
 1. Heyland. A.; "**A Graphical Treatment of the Induction Motor.**" New York, NY: McGraw Publishing Company, 1906
