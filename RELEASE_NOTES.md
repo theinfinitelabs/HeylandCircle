@@ -1,14 +1,11 @@
 # RELEASE NOTES
 
 ## HeylandCircle v0.2.0 (Unreleased)
-Added
-- CI badge in README
-- Binder badge in README
-- Equivalent circuit parameter extraction from test data
-
-Fixed
-- Naming consistency in MachineTestData (Isc → I_sc)
-- Bug fixes in calculate_equivalent_circuit()
+- CI badge: Added in README
+- Binder badge: Added in README
+- Equivalent circuit: Parameter extraction from test data implemented
+- Circle diagram example figure: Included in the README
+- Fixed: Naming consistency in MachineTestData (Isc → I_sc)
 
 ## HeylandCircle v0.1.0 (May 11, 2026)
 - Initial release of the HeylandCircle framework.

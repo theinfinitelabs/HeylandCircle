@@ -4,6 +4,8 @@ HeylandCircle is a lightweight, modular Python tool for constructing and analyzi
 [![Tests](https://github.com/theinfinitelabs/HeylandCircle/actions/workflows/ci.yml/badge.svg)](https://github.com/theinfinitelabs/HeylandCircle/actions)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/theinfinitelabs/HeylandCircle/main)
 
+![Heyland Circle Diagram](docs/images/circle_diagram.png)
+
 ## 🔬 Features
 - Compute current locus from machine parameters or test data
 - Estimate key points (no-load, full-load, max torque)
