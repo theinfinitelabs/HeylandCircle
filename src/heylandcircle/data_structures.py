@@ -46,6 +46,17 @@ class MachineTestData:
 
 
 @dataclass
+class EquivalentCircuit:
+    """Equivalent circuit parameters for an induction machine per phase."""
+    R1: float  # Stator resistance [Ohms]
+    X1: float  # Stator reactance [Ohms]
+    Rc: float  # Core loss resistance [Ohms]
+    Xm: float  # Magnetizing reactance [Ohms]
+    R2: float  # Rotor resistance referred to stator [Ohms]
+    X2: float  # Rotor reactance referred to stator [Ohms]
+
+
+@dataclass
 class Point:
     x: float
     y: float
