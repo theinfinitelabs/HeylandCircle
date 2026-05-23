@@ -46,11 +46,11 @@ class CircleDiagram:
         # Phase 1: Get Output line and circle center 
         # ------------------------------------------------
         # Scale the currents
-        self.data.I0 *= self.config.current_scale
-        self.data.Isc *= self.config.current_scale
+        self.data.I_0 *= self.config.current_scale
+        self.data.I_sc *= self.config.current_scale
         
         # Compute endpoints of the no-load (point O') and starting-current (point A) phasors
-        self.p0 = phasor_to_point(self.data.I0, self.data.phi0_deg)
+        self.p0 = phasor_to_point(self.data.I_0, self.data.phi_0_deg)
         self.psn = phasor_to_point(self.data.I_start, self.data.phi_sc_deg)
         
         # Compute slope and y-intercept of the Output line (between O' and A)

@@ -26,9 +26,9 @@ def sample_config():
 @pytest.fixture
 def sample_data():
     return MachineTestData(
-        I0=3.85,
-        phi0_deg=85.85,
-        Isc=8.4,
+        I_0=3.85,
+        phi_0_deg=85.85,
+        I_sc=8.4,
         phi_sc_deg=66.18,
         V_rated=415,
         V_sc=80,

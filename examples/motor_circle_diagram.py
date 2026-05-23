@@ -19,9 +19,9 @@ from heylandcircle.data_structures import CircleDiagramConfig, MachineTestData
 def main():
     # Sample test data for a 10 kW induction machine
     test_data = MachineTestData(
-        I0=6,               # No-load current [A]
-        phi0_deg=85,        # No-load current angle [deg]
-        Isc=12.0,           # Blocked-rotor current [A]
+        I_0=6,               # No-load current [A]
+        phi_0_deg=85,        # No-load current angle [deg]
+        I_sc=12.0,           # Blocked-rotor current [A]
         phi_sc_deg=69.0667, # Blocked-rotor current angle [deg]
         V_rated=400,        # Rated voltage [V]
         V_sc=100,           # Blocked-rotor test voltage [V]

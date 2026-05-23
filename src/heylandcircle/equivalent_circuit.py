@@ -26,15 +26,15 @@ def calculate_equivalent_circuit(test_data) -> EquivalentCircuit:
     """
     # --- No-load test: shunt branch (Rc, Xm) ---
     V0 = test_data.V_rated / np.sqrt(3)      # Per-phase voltage
-    I0 = test_data.I0
-    phi0_rad = np.deg2rad(test_data.phi0_deg)
+    I_0 = test_data.I_0
+    phi0_rad = np.deg2rad(test_data.phi_0_deg)
 
-    Rc = V0 / (I0 * np.cos(phi0_rad))        # Core loss resistance
-    Xm = V0 / (I0 * np.sin(phi0_rad))        # Magnetizing reactance
+    Rc = V0 / (I_0 * np.cos(phi0_rad))        # Core loss resistance
+    Xm = V0 / (I_0 * np.sin(phi0_rad))        # Magnetizing reactance
 
     # --- Blocked rotor test: series branch (R1, X1, R2, X2) ---
     V_sc = test_data.V_sc / np.sqrt(3)       # Per-phase voltage
-    I_sc = test_data.Isc
+    I_sc = test_data.I_sc
     phi_sc_rad = np.deg2rad(test_data.phi_sc_deg)
 
     Z_sc = V_sc / I_sc
