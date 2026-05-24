@@ -4,7 +4,10 @@ HeylandCircle is a lightweight, modular Python tool for constructing and analyzi
 [![Tests](https://github.com/theinfinitelabs/HeylandCircle/actions/workflows/ci.yml/badge.svg)](https://github.com/theinfinitelabs/HeylandCircle/actions)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/theinfinitelabs/HeylandCircle/main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)](https://www.repostatus.org/#active)
+
+[![arXiv](https://img.shields.io/badge/arXiv-2512.20015-b31b1b.svg)](https://arxiv.org/abs/2512.20015)
+[![arXiv](https://img.shields.io/badge/arXiv-2512.08302-b31b1b.svg)](https://arxiv.org/abs/2512.08302)
 
 ![Heyland Circle Diagram](docs/images/circle_diagram.png)
 
@@ -23,17 +26,17 @@ python examples/motor_circle_diagram.py
 ## 🏗️ Structure
 ```
 heylandcircle/
-  circle_diagram.py/
-  data_structures.py/
-  geometry.py/
-  plot.py/
-  tests/
+  circle_diagram.py
+  data_structures.py
+  equivalent_circuit.py
+  geometry.py
+  plot.py
 ```
 
 ## 🧪 Testing
 HeylandCircle uses pytest for validation.
 
-Run all tests:
+Run all tests from the root of the repo using the following command:
 ```
 pytest
 ```
@@ -42,9 +45,12 @@ Tests cover:
 - parameter transformations
 - basic analytical checks
 
-## References (Select)
-1. Heyland. A.; "**A Graphical Treatment of the Induction Motor.**" New York, NY: McGraw Publishing Company, 1906
-1. Langsdorf. A.; "**Theory of Alternating Current Machines.**" New York, NY: McGraw-Hill Book Company, 1937
-1. Gupta, A.; and Gupta, A.; "**Testing of Transformers and Induction Machines.**" Charleston, SC: CreateSpace, 2012
+## References
+1. Heyland, A.; "**A Graphical Treatment of the Induction Motor.**" New York, NY: McGraw Publishing Company, 1906
+1. Langsdorf, A.; "**Theory of Alternating Current Machines.**" New York, NY: McGraw-Hill Book Company, 1937
+1. Thereja, B. L.; and Thereja, A.K.; "**A Textbook of Electrical Technology.**" New Delhi, India: S. Chand Publishing, 2014
+1. Fritzgerald, A.; Kingsley Jr., C.; and Umans, S.; "**Electric Machinery.**" 6th ed., New York, NY: McGraw-Hill, 2002
+1. Carpaneto, E.; and Savio, S.; “**A Teaching Tool for the Heyland Circle Diagram using Numerical Simulation**,” IEEE Transactions on Education, vol. 45, no. 3, pp. 263–270, 2002.
+1. Gupta, A.; and Gupta, A.; "**Testing of Transformers and Induction Machines.**" 1st ed., Charleston, SC: CreateSpace, 2012
 1. Gupta, A.; "**Möbius Transformations and the Analytic-Geometric Reconstruction of the Induction-Machine Circle Diagram.**" In arXiv:2512.08302, 2025 [math.DS]
 1. Gupta, A.; and Gupta, A.; "**HeylandCircle: A Computational Framework for the Geometric Reconstruction of the Heyland Circle Diagram.**" In arXiv:2512.20015, 2025 [eess.SY]
