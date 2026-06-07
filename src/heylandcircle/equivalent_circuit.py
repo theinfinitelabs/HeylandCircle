@@ -42,8 +42,9 @@ def calculate_equivalent_circuit(test_data) -> EquivalentCircuit:
     X_sc = Z_sc * np.sin(phi_sc_rad)         # Total series reactance
 
     # Equal split assumption (general-purpose motor; use 0.4/0.6 for wound rotor)
-    R1 = R_sc / 2
-    R2 = R_sc / 2
+    if test_data.R1_dc is None:
+        R1 = R_sc / 2
+        R2 = R_sc / 2
     X1 = X_sc / 2
     X2 = X_sc / 2
 

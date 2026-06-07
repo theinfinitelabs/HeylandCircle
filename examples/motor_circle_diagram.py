@@ -10,6 +10,7 @@
 # License:      MIT
 # 
 
+
 import matplotlib.pyplot as plt
 
 from heylandcircle.circle_diagram import CircleDiagram
@@ -24,7 +25,8 @@ def main():
         phi_sc_deg=69.0667,  # Blocked-rotor current angle [deg]
         V_rated=400,         # Rated voltage [V]
         V_sc=100,            # Blocked-rotor test voltage [V]
-        P_rated_kw=5.6       # Rated power [kW]
+        P_rated_kw=5.6,      # Rated power [kW]
+        R1_dc=None           # Stator resistance at operating temperature [Ω]
     )
 
     # Circle diagram configuration

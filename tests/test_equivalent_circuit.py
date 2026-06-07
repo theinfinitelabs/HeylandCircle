@@ -29,6 +29,7 @@ def sample_data():
         V_rated=208,
         V_sc=90,
         P_rated_kw=0.724,
+        R1_dc=None
     )
 
 
@@ -149,6 +150,7 @@ def test_unity_pf_blocked_rotor_gives_zero_reactance():
         I_0=3.85, phi_0_deg=85.85,
         I_sc=8.4, phi_sc_deg=0.0,
         V_rated=415, V_sc=80, P_rated_kw=5.5,
+        R1_dc=None
     )
     ec = calculate_equivalent_circuit(data)
     assert ec.X1 == pytest.approx(0.0, abs=1e-10)
@@ -161,11 +163,13 @@ def test_voltage_scaling_doubles_impedance():
         I_0=3.85, phi_0_deg=85.85,
         I_sc=8.4, phi_sc_deg=66.18,
         V_rated=415, V_sc=80, P_rated_kw=5.5,
+        R1_dc=None
     )
     scaled = MachineTestData(
         I_0=3.85, phi_0_deg=85.85,
         I_sc=8.4, phi_sc_deg=66.18,
         V_rated=830, V_sc=160, P_rated_kw=5.5,
+        R1_dc=None
     )
     ec_base = calculate_equivalent_circuit(base)
     ec_scaled = calculate_equivalent_circuit(scaled)

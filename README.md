@@ -54,3 +54,4 @@ Tests cover:
 1. Gupta, A.; and Gupta, A.; "**Testing of Transformers and Induction Machines.**" 1st ed., Charleston, SC: CreateSpace, 2012
 1. Gupta, A.; "**Möbius Transformations and the Analytic-Geometric Reconstruction of the Induction-Machine Circle Diagram.**" In arXiv:2512.08302, 2025 [math.DS]
 1. Gupta, A.; and Gupta, A.; "**HeylandCircle: A Computational Framework for the Geometric Reconstruction of the Heyland Circle Diagram.**" In arXiv:2512.20015, 2025 [eess.SY]
+1. Jurkovic, S.; "**Induction Motor Parameters Extraction**", Educypedia-Electronics, 2014

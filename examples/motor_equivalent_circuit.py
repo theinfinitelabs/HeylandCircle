@@ -1,5 +1,4 @@
 #%%
-# ---------------------------------------------------------------------
 # ./examples/motor_equivalent_circuit.py
 #
 # Sample script to demonstrate the Equivalent Circuit calculations using
@@ -10,7 +9,8 @@
 #               In Orbit Aerospace
 # Organization: Infinite Labs
 # License:      MIT
-# ---------------------------------------------------------------------
+# 
+
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -24,11 +24,12 @@ def main():
     test_data = MachineTestData(
         I_0=3.85,            # No-load current [A]
         phi_0_deg=85.85,     # No-load power factor angle [deg]
-        I_sc=8.4,           # Blocked-rotor current [A]
-        phi_sc_deg=66.18,   # Blocked-rotor power factor angle [deg]
-        V_rated=415,        # Rated line voltage [V]
-        V_sc=80,            # Blocked-rotor test line voltage [V]
-        P_rated_kw=None     # Rated power not required for EC calculation
+        I_sc=8.4,            # Blocked-rotor current [A]
+        phi_sc_deg=66.18,    # Blocked-rotor power factor angle [deg]
+        V_rated=415,         # Rated line voltage [V]
+        V_sc=80,             # Blocked-rotor test line voltage [V]
+        P_rated_kw=None,     # Rated power not required for EC calculation
+        R1_dc=None           # Stator resistance at operating temperature [Ω]
     )
 
     # Calculate equivalent circuit parameters

@@ -22,6 +22,7 @@ def test_machine_test_data_starting_current():
         V_rated=400.0,
         V_sc=100.0,
         P_rated_kw=15.0,
+        R1_dc=None
     )
 
     assert data.I_start == pytest.approx(80.0)
