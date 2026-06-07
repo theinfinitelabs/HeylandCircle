@@ -31,13 +31,14 @@ class CircleDiagramConfig:
 @dataclass
 class MachineTestData:
     """Raw test data for the induction machine."""
-    I_0: float           # No-load current magnitude [A]
-    phi_0_deg: float     # No-load current angle from vertical (clockwise) [deg]
-    I_sc: float          # Blocked-rotor current magnitude [A] at V_SC
+    I_0: float          # No-load current magnitude [A]
+    phi_0_deg: float    # No-load current angle from vertical (clockwise) [deg]
+    I_sc: float         # Blocked-rotor current magnitude [A] at V_SC
     phi_sc_deg: float   # Blocked-rotor current angle from vertical (clockwise) [deg]
     V_rated: float      # Rated line-to-line voltage [V]
     V_sc: float         # Blocked-rotor test voltage [V]
     P_rated_kw: float   # Rated power [kW]
+    R1_dc: float        # Optional DC stator resistance [Ohms]
 
     @property
     def I_start(self) -> float:

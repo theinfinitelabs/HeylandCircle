@@ -33,6 +33,7 @@ def sample_data():
         V_rated=415,
         V_sc=80,
         P_rated_kw=5.5,
+        R1_dc=None
     )
 
 
