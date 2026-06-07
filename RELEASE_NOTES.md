@@ -3,7 +3,7 @@
 ## HeylandCircle v0.2.0 (Unreleased)
 - CI badge: Added in README
 - Binder badge: Added in README
-- Equivalent circuit: Parameter extraction from test data implemented
+- Equivalent circuit: Parameter extraction from test data implemented, pytest and example script added
 - Circle diagram example figure: Included in the README
 - Fixed: Naming consistency in MachineTestData (Isc → I_sc)
 
