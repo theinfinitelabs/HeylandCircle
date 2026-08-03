@@ -4,9 +4,7 @@
 # Sample script to demonstrate the Heyland circle diagram using test data.
 #
 # Author:       Anubhav Gupta
-# Affiliation:  University of Colorado Boulder
-#               In Orbit Aerospace
-# Organization: Infinite Labs
+# Organization: Abruan Aerospace
 # License:      MIT
 # 
 

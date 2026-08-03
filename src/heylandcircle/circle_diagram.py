@@ -6,9 +6,7 @@
 # for induction machines using classical circle diagram methods.
 #
 # Author:       Anubhav Gupta
-# Affiliation:  University of Colorado Boulder
-#               In Orbit Aerospace
-# Organization: Infinite Labs
+# Organization: Abruan Aerospace
 # License:      MIT
 # ---------------------------------------------------------------------
 
