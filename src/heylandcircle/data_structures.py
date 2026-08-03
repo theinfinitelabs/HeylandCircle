@@ -6,9 +6,7 @@
 # and computed performance results used throughout the package.
 #
 # Author:       Anubhav Gupta
-# Affiliation:  University of Colorado Boulder
-#               In Orbit Aerospace
-# Organization: Infinite Labs
+# Organization: Abruan Aerospace
 # License:      MIT
 # ---------------------------------------------------------------------
 
