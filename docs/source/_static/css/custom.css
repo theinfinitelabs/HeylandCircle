@@ -1,0 +1,70 @@
+/** css/yourtheme.css **/
+
+/* This line is theme specific - it includes the base theme CSS */
+/*@import '../alabaster.css';  /* for Alabaster */
+@import 'theme.css';       /* for the Read the Docs theme */
+
+body {
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #CFB87C; /* CU gold */
+    }
+
+    /* Sidebar */
+    .wy-nav-side {
+      background: #565A5C;  /* CU dark grey */
+    }
+    
+    .wy-nav-content {
+      max-width: none;
+    }
+
+    .wy-menu-vertical .caption,
+    .wy-menu-vertical .caption > span.caption-text {
+      color: #fafafa !important;   /* change caption color */
+    }
+
+    /* Overriding breadcrumb link colors */
+    .wy-breadcrumbs a {
+      color: #333; /* Dark grey color for better visibility */
+    }
+
+    .wy-breadcrumbs a:hover {
+      color: #555; /* Slightly lighter grey on hover */
+    }
+
+    .wy-breadcrumbs a:active {
+      color: #555; /* Same color for active state */
+    }
+
+}
+
+
+/* Publications list styling */
+.publist { margin-top: .2rem; }
+.publist ol.arabic > li { margin-bottom: .7rem; }
+
+/* Author emphasis (you) */
+.publist .me { font-weight: 700; }
+
+/* Title links – blue, bold-ish, underlined like your screenshot */
+.publist a {
+  color: #CFB87C;               /* tweak to taste */
+  text-decoration: bold-ish;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+
+/* Venue line – italic & muted */
+.publist .venue {
+  font-style: italic;
+  color: #444;
+}
+
+/* Optional grey sub-note line (awards etc.) */
+.publist .note {
+  display: block;
+  color: #777;
+  font-size: 90%;
+  margin-top: .15rem;
+}
