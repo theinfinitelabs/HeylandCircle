@@ -1,29 +1,73 @@
 # HeylandCircle
-HeylandCircle is a lightweight, modular Python tool for constructing and analyzing the circle diagram of three-phase induction machines, enabling rapid visualization of performance characteristics such as power factor, torque, current, and efficiency.
 
-[![Tests](https://github.com/theinfinitelabs/HeylandCircle/actions/workflows/ci.yml/badge.svg)](https://github.com/theinfinitelabs/HeylandCircle/actions)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/theinfinitelabs/HeylandCircle/main)
+HeylandCircle is a lightweight, modular Python tool for constructing and analyzing the circle diagram of three-phase induction machines, enabling rapid visualization of performance characteristics such as power factor, torque, current, and efficiency.
+<br></br>
+
+[![Tests](https://github.com/abruanspace/HeylandCircle/actions/workflows/ci.yml/badge.svg)](https://github.com/abruanspace/HeylandCircle/actions)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/abruanspace/HeylandCircle/main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)](https://www.repostatus.org/#active)
 
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![GitHub release](https://img.shields.io/github/v/release/abruanspace/HeylandCircle)](https://github.com/abruanspace/HeylandCircle/releases)
+[![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://abruan-documentation.readthedocs.io/en/develop/#)
+
 [![arXiv](https://img.shields.io/badge/arXiv-2512.20015-b31b1b.svg)](https://arxiv.org/abs/2512.20015)
 [![arXiv](https://img.shields.io/badge/arXiv-2512.08302-b31b1b.svg)](https://arxiv.org/abs/2512.08302)
+<br></br>
 
 ![Heyland Circle Diagram](docs/images/circle_diagram.png)
 
 ## 🔬 Features
+
 - Compute current locus from machine parameters or test data
 - Estimate key points (no-load, full-load, max torque)
 - Simple plotting utilities
 
-## ⚡ Quick Start
+## ⚡ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/theinfinitelabs/HeylandCircle.git
+cd HeylandCircle
 ```
-pip install -e .
+
+Create a virtual environment:
+
+```bash
+python3 -m venv .venv
+```
+
+Activate the environment:
+
+**macOS / Linux**
+```bash
+source .venv/bin/activate
+```
+
+**Windows (PowerShell)**
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Install HeylandCircle in editable mode:
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install -e .
+```
+
+Verify the installation:
+
+```bash
 pytest
 python examples/motor_circle_diagram.py
 ```
 
 ## 🏗️ Structure
+
 ```
 heylandcircle/
   circle_diagram.py
@@ -34,18 +78,23 @@ heylandcircle/
 ```
 
 ## 🧪 Testing
+
 HeylandCircle uses pytest for validation.
 
 Run all tests from the root of the repo using the following command:
+
 ```
 pytest
 ```
+
 Tests cover:
+
 - circle construction consistency
 - parameter transformations
 - basic analytical checks
 
 ## References
+
 1. Heyland, A.; "**A Graphical Treatment of the Induction Motor.**" New York, NY: McGraw Publishing Company, 1906
 1. Langsdorf, A.; "**Theory of Alternating Current Machines.**" New York, NY: McGraw-Hill Book Company, 1937
 1. Thereja, B. L.; and Thereja, A.K.; "**A Textbook of Electrical Technology.**" New Delhi, India: S. Chand Publishing, 2014

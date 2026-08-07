@@ -17,3 +17,6 @@ __pycache__/
 
 # Sphinx
 docs/_build/
+
+# Virtual environments
+*.venv/
