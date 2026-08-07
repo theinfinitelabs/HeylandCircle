@@ -68,7 +68,7 @@ python examples/motor_circle_diagram.py
 
 ## 🏗️ Structure
 
-```
+```bash
 heylandcircle/
   circle_diagram.py
   data_structures.py
@@ -83,7 +83,7 @@ HeylandCircle uses pytest for validation.
 
 Run all tests from the root of the repo using the following command:
 
-```
+```python
 pytest
 ```
 
@@ -93,14 +93,32 @@ Tests cover:
 - parameter transformations
 - basic analytical checks
 
+## 📚 Citation
+
+If you use HeylandCircle in academic work, please cite:
+
+> Gupta, A., and Gupta, A., "HeylandCircle: A Computational Framework for the Geometric Reconstruction of the Heyland Circle Diagram," arXiv preprint, arXiv:2512.20015, 2025.
+
+```bibtex
+@article{gupta2025heylandcircle,
+      title={HeylandCircle: A Computational Framework for the Geometric Reconstruction of the Heyland Circle Diagram}, 
+      author={Anubhav Gupta and Abhinav Gupta},
+      year={2025},
+      eprint={2512.20015},
+      archivePrefix={arXiv preprint, arXiv},
+      primaryClass={eess.SY},
+      url={https://arxiv.org/abs/2512.20015},
+}
+```
+
 ## References
 
-1. Heyland, A.; "**A Graphical Treatment of the Induction Motor.**" New York, NY: McGraw Publishing Company, 1906
-1. Langsdorf, A.; "**Theory of Alternating Current Machines.**" New York, NY: McGraw-Hill Book Company, 1937
-1. Thereja, B. L.; and Thereja, A.K.; "**A Textbook of Electrical Technology.**" New Delhi, India: S. Chand Publishing, 2014
-1. Fritzgerald, A.; Kingsley Jr., C.; and Umans, S.; "**Electric Machinery.**" 6th ed., New York, NY: McGraw-Hill, 2002
+1. Heyland, A.; "**[A Graphical Treatment of the Induction Motor](https://archive.org/details/graphicaltreatme00heylrich/page/n3/mode/2up)**," New York, NY: McGraw Publishing Company, 1906
+1. Langsdorf, A.; "**[Theory of Alternating Current Machines](https://books.google.com/books?id=zKVd780XHGcC&newbks=0&hl=en&source=newbks_fb)**," New York, NY: McGraw-Hill Book Company, 1937
+1. Thereja, B. L.; and Thereja, A.K.; "**[A Textbook of Electrical Technology](https://www.amazon.com/dp/8121924413)**," New Delhi, India: S. Chand Publishing, 2014
+1. Fritzgerald, A.; Kingsley Jr., C.; and Umans, S.; "**[Electric Machinery](https://www.amazon.com/Electric-Machinery-Fitzgerald-Kingsley-Umans/dp/0070530394)**," 6th ed., New York, NY: McGraw-Hill, 2002
 1. Carpaneto, E.; and Savio, S.; “**A Teaching Tool for the Heyland Circle Diagram using Numerical Simulation**,” IEEE Transactions on Education, vol. 45, no. 3, pp. 263–270, 2002.
-1. Gupta, A.; and Gupta, A.; "**Testing of Transformers and Induction Machines.**" 1st ed., Charleston, SC: CreateSpace, 2012
-1. Gupta, A.; "**Möbius Transformations and the Analytic-Geometric Reconstruction of the Induction-Machine Circle Diagram.**" In arXiv:2512.08302, 2025 [math.DS]
-1. Gupta, A.; and Gupta, A.; "**HeylandCircle: A Computational Framework for the Geometric Reconstruction of the Heyland Circle Diagram.**" In arXiv:2512.20015, 2025 [eess.SY]
+1. Gupta, A.; and Gupta, A.; "**[Testing of Transformers and Induction Machines.](https://www.amazon.com/dp/B00A63NBTI)**" 1st ed., Charleston, SC: CreateSpace, 2012
+1. Gupta, A.; "**[Möbius Transformations and the Analytic-Geometric Reconstruction of the Induction-Machine Circle Diagram.](https://arxiv.org/abs/2512.08302)**" In arXiv:2512.08302, 2025 [math.DS]
+1. Gupta, A.; and Gupta, A.; "**[HeylandCircle: A Computational Framework for the Geometric Reconstruction of the Heyland Circle Diagram.](https://arxiv.org/abs/2512.20015)**" In arXiv:2512.20015, 2025 [eess.SY]
 1. Jurkovic, S.; "**Induction Motor Parameters Extraction**", Educypedia-Electronics, 2014
