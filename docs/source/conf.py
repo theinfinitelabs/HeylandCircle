@@ -3,6 +3,16 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import os
+import sys
+
+PROJECT_ROOT = os.path.abspath("../..")
+EXAMPLES_ROOT = os.path.join(PROJECT_ROOT, "examples")
+
+sys.path.insert(0, PROJECT_ROOT)
+sys.path.insert(0, EXAMPLES_ROOT)
+
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 

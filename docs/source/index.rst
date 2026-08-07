@@ -12,6 +12,9 @@ documentation for details.
 
 
 .. toctree::
+   :hidden:
    :maxdepth: 2
-   :caption: Contents:
+   :caption: HeylandCircle:
+
+   rst/examples
 
