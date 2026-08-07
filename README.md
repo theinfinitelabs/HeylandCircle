@@ -1,8 +1,5 @@
 # HeylandCircle
 
-HeylandCircle is a lightweight, modular Python tool for constructing and analyzing the circle diagram of three-phase induction machines, enabling rapid visualization of performance characteristics such as power factor, torque, current, and efficiency.
-<br></br>
-
 [![Tests](https://github.com/abruanspace/HeylandCircle/actions/workflows/ci.yml/badge.svg)](https://github.com/abruanspace/HeylandCircle/actions)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/abruanspace/HeylandCircle/main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -17,7 +14,10 @@ HeylandCircle is a lightweight, modular Python tool for constructing and analyzi
 [![arXiv](https://img.shields.io/badge/arXiv-2512.08302-b31b1b.svg)](https://arxiv.org/abs/2512.08302)
 <br></br>
 
-![Heyland Circle Diagram](docs/images/circle_diagram.png)
+HeylandCircle is a lightweight, modular Python tool for constructing and analyzing the circle diagram of three-phase induction machines, enabling rapid visualization of performance characteristics such as power factor, torque, current, and efficiency.
+<br></br>
+
+![Heyland Circle Diagram](docs/source/_images/circle_diagram.png)
 
 ## 🔬 Features
 
