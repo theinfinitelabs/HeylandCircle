@@ -9,6 +9,9 @@
 # License:      MIT
 # 
 
+r"""
+TBD
+"""
 
 import numpy as np
 import matplotlib.pyplot as plt
