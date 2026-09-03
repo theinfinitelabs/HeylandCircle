@@ -1,0 +1,21 @@
+{% extends "!layout.html" %}
+  {% block footer %} {{ super() }}
+  <!-- {% set css_files = css_files + ['_static/css/custom.css'] %} -->
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background:goldenrod;
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      background: gray;
+    }
+    .wy-nav-content {
+      max-width: none;
+    }
+    .wy-menu-vertical a { 
+      color: #fafafa;
+    }
+  </style>
+{% endblock %}
