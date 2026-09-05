@@ -23,6 +23,24 @@ through Python. Users can generate circle diagrams, inspect
 characteristic operating points, and incorporate the analysis into
 scripts, notebooks, and teaching examples.
 
+.. sidebar:: HeylandCircle Vision
+
+   .. image:: _static/heylandcircle_logo.svg
+       :align: center
+       :width: 300
+
+   **Description:** A simulation framework for aero, gas, and plasma optics analysis in high-speed and planetary environment. 
+   
+   **License:** MIT License
+
+   **Platforms:** macOS, Linux and Windows
+   
+   **First Release:** May 2026
+
+
+   **Status:** In development
+
+
 Capabilities
 ------------
 
@@ -52,6 +70,17 @@ The resulting diagrams and performance estimates should be interpreted
 in the context of the selected machine model and the quality of its
 input parameters or test data.
 
+.. role:: me
+.. role:: venue
+.. role:: note
+
+References
+----------
+
+#. Gupta, A.; and Argrow, B.; "`Analytical Approach for Aero-Optical and Atmospheric Effects in Supersonic Flow Fields. <https://arc.aiaa.org/doi/10.2514/6.2020-0684>`__" In: :venue:`AIAA SciTech`, Orlando, FL, Jan. 6 - 10, 2020.
+#. Gupta, A.; "`Möbius Transformations and the Analytic-Geometric Reconstruction of the Induction-Machine Circle Diagram. <https://arxiv.org/abs/2512.08302>`__" In: :venue:`arXiv:2512.08302`, 2025 [math.DS]
+#. Gupta, A.; and Gupta, A.; "`Testing of Transformers and Induction Machines. <https://www.amazon.com/dp/B00A63NBTI>`__" 1st ed., Charleston, SC: CreateSpace, 2012
+#. Gupta, A.; and Gupta, A.; "`HeylandCircle: A Computational Framework for the Geometric Reconstruction of the Heyland Circle Diagram. <https://arxiv.org/abs/2512.20015>`__" In: :venue:`arXiv:2512.20015`, 2025 [eess.SY]
 
 .. toctree::
    :hidden:
