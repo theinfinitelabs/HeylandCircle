@@ -8,7 +8,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![GitHub release](https://img.shields.io/github/v/release/abruanspace/HeylandCircle)](https://github.com/abruanspace/HeylandCircle/releases)
-[![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://abruan-documentation.readthedocs.io/en/develop/#)
+[![Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://heylandcircle.readthedocs.io/en/latest)
 
 [![arXiv](https://img.shields.io/badge/arXiv-2512.20015-b31b1b.svg)](https://arxiv.org/abs/2512.20015)
 [![arXiv](https://img.shields.io/badge/arXiv-2512.08302-b31b1b.svg)](https://arxiv.org/abs/2512.08302)

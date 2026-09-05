@@ -5,37 +5,47 @@
 @import 'theme.css';       /* for the Read the Docs theme */
 
 body {
-    /* Sidebar header (and topbar for mobile) */
-    .wy-side-nav-search, .wy-nav-top {
-      background: #CFB87C; /* CU gold */
-    }
+  /* Sidebar header (and topbar for mobile) */
+  .wy-side-nav-search, .wy-nav-top {
+    background: #CFB87C; /* CU gold */
+  }
 
-    /* Sidebar */
-    .wy-nav-side {
-      background: #565A5C;  /* CU dark grey */
-    }
-    
-    .wy-nav-content {
-      max-width: none;
-    }
+  /* Sidebar */
+  .wy-nav-side {
+    background: #565A5C;  /* CU dark grey */
+  }
+  
+  .wy-nav-content {
+    max-width: none;
+  }
 
-    .wy-menu-vertical .caption,
-    .wy-menu-vertical .caption > span.caption-text {
-      color: #fafafa !important;   /* change caption color */
-    }
+  .wy-menu-vertical .caption,
+  .wy-menu-vertical .caption > span.caption-text {
+    color: #fafafa !important;   /* change caption color */
+  }
 
-    /* Overriding breadcrumb link colors */
-    .wy-breadcrumbs a {
-      color: #333; /* Dark grey color for better visibility */
-    }
+  /* Overriding breadcrumb link colors */
+  .wy-breadcrumbs a {
+    color: #333; /* Dark grey color for better visibility */
+  }
 
-    .wy-breadcrumbs a:hover {
-      color: #555; /* Slightly lighter grey on hover */
-    }
+  .wy-breadcrumbs a:hover {
+    color: #555; /* Slightly lighter grey on hover */
+  }
 
-    .wy-breadcrumbs a:active {
-      color: #555; /* Same color for active state */
-    }
+  .wy-breadcrumbs a:active {
+    color: #555; /* Same color for active state */
+  }
+
+  /* Covers logo selectors used by different RTD theme versions */
+  .wy-side-nav-search img.logo,
+  .wy-side-nav-search a img {
+    display: block;
+    width: 220px;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto 0.5rem;
+  }
 
 }
 

@@ -17,9 +17,9 @@ sys.path.insert(0, EXAMPLES_ROOT)
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'HeylandCircle'
-copyright = '2026, Anubhav Gupta and Abhinav Gupta'
+copyright = '2026, Abruan Aerospace'
 author = 'Anubhav Gupta and Abhinav Gupta'
-release = '0.1.0'
+release = '0.2.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -47,6 +47,7 @@ html_css_files = [
     'css/custom.css',
 ]
 html_logo = '_static/heylandcircle_logo.svg'
+html_favicon = "_static/heylandcircle_logo.svg"
 html_theme_options = {
     'logo_only': False,
     'collapse_navigation': False,
