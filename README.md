@@ -19,24 +19,22 @@ HeylandCircle is a lightweight, modular Python tool for constructing and analyzi
 
 ![Heyland Circle Diagram](docs/source/_images/circle_diagram.png)
 
-## 🔬 Features
+## Features
 
-- Compute current locus from machine parameters or test data
-- Estimate key points (no-load, full-load, max torque)
-- Simple plotting utilities
+- Construct the Heyland circle from machine parameters or test data
+- Extract equivalent-circuit parameters from no-load, blocked-rotor, and DC tests
+- Locate important operating points, including no-load, full-load, and maximum-torque conditions
+- Evaluate induction-machine performance characteristics
+- Generate publication-ready circle-diagram visualizations
+- Use tested examples through Python scripts or Binder
 
-## ⚡ Installation
+## Quick Start
 
-Clone the repository:
+HeylandCircle requires Python 3.10 or later. Clone the repository and create a virtual environment:
 
 ```bash
 git clone https://github.com/abruanspace/HeylandCircle.git
 cd HeylandCircle
-```
-
-Create a virtual environment:
-
-```bash
 python3 -m venv .venv
 ```
 
@@ -66,38 +64,17 @@ pytest
 python examples/motor_circle_diagram.py
 ```
 
-## 🏗️ Structure
+## Documentation
 
-```bash
-heylandcircle/
-  circle_diagram.py
-  data_structures.py
-  equivalent_circuit.py
-  geometry.py
-  plot.py
-```
+Complete installation instructions, API documentation, theory, and examples are available in the HeylandCircle documentation.
 
-## 🧪 Testing
+For release history, see RELEASENOTES.md.
 
-HeylandCircle uses pytest for validation.
-
-Run all tests from the root of the repo using the following command:
-
-```python
-pytest
-```
-
-Tests cover:
-
-- circle construction consistency
-- parameter transformations
-- basic analytical checks
-
-## 📚 Citation
+## Citation
 
 If you use HeylandCircle in academic work, please cite:
 
-> Gupta, A., and Gupta, A., "HeylandCircle: A Computational Framework for the Geometric Reconstruction of the Heyland Circle Diagram," arXiv preprint, arXiv:2512.20015, 2025.
+> Gupta, A., and Gupta, A., "HeylandCircle: A Computational Framework for the Geometric Reconstruction of the Heyland Circle Diagram," arXiv:2512.20015, 2025.
 
 ```bibtex
 @article{gupta2025heylandcircle,
@@ -105,11 +82,12 @@ If you use HeylandCircle in academic work, please cite:
       author={Anubhav Gupta and Abhinav Gupta},
       year={2025},
       eprint={2512.20015},
-      archivePrefix={arXiv preprint, arXiv},
+      archivePrefix={arXiv},
       primaryClass={eess.SY},
       url={https://arxiv.org/abs/2512.20015},
 }
 ```
+Citation metadata is also provided in CITATION.cff.
 
 ## References
 
@@ -121,4 +99,4 @@ If you use HeylandCircle in academic work, please cite:
 1. Gupta, A.; and Gupta, A.; "**[Testing of Transformers and Induction Machines.](https://www.amazon.com/dp/B00A63NBTI)**" 1st ed., Charleston, SC: CreateSpace, 2012
 1. Gupta, A.; "**[Möbius Transformations and the Analytic-Geometric Reconstruction of the Induction-Machine Circle Diagram.](https://arxiv.org/abs/2512.08302)**" In arXiv:2512.08302, 2025 [math.DS]
 1. Gupta, A.; and Gupta, A.; "**[HeylandCircle: A Computational Framework for the Geometric Reconstruction of the Heyland Circle Diagram.](https://arxiv.org/abs/2512.20015)**" In arXiv:2512.20015, 2025 [eess.SY]
-1. Jurkovic, S.; "**Induction Motor Parameters Extraction**", Educypedia-Electronics, 2014
+1. Jurkovic, S.; "**[Induction Motor Parameters Extraction.](https://d1wqtxts1xzle7.cloudfront.net/68724620/motor_parameters-libre.pdf?1628857902=&response-content-disposition=inline%3B+filename%3DINDUCTION_MOTOR_PARAMETERS_EXTRACTION.pdf&Expires=1788664089&Signature=RY4duSkC~jJDIwuuXePWhcCP7Ap6PxOTVeMGRUSSwky53yEjkqcr7w-2pRxe4iI1t7pXwhlgcroq4SEGarmb4~UX-K1f4b2ZhlWYTIY-LjMbxaTtP6akjEy5WJoDL1eQLBaljd-0TocbMLBYmJo1w0B~yS0FliNTNnwz-iwNyb1gJUAW9049CChJJmrsKrCAJ6gSw4W43kxlvENOoeSyxlqydAxHvbG5mrYuPTjP1InUK14SJvIR6TACGMldj8u1vWJtfmPHQgJt6QK38IkqDtNyh-23Sx8GD4SBtXUDbBnwDlEfgiwxbGVcP8Ho6aBNFJhxC3ax5k4UwwknWt7boA__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA)**", Educypedia-Electronics, 2014
