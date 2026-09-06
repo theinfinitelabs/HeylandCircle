@@ -1,47 +1,60 @@
 cff-version: 1.2.0
 title: "HeylandCircle"
-message: "If you use this software, please cite it using the metadata below."
+message: >
+  If you use HeylandCircle in academic work, please cite the article below.
 type: software
 
 authors:
   - family-names: "Gupta"
     given-names: "Anubhav"
-    affiliation: "University of Colorado Boulder; Abruan Aerospace"
+    affiliation:
+      - name: "University of Colorado Boulder"
+      - name: "Abruan Aerospace"
+    orcid: "https://orcid.org/0000-0002-3216-868X"
+
   - family-names: "Gupta"
     given-names: "Abhinav"
-    affiliation: "University of Colorado Boulder"
+    affiliation:
+      - name: "University of Colorado Boulder"
+    orcid: "https://orcid.org/0009-0006-8863-1457"
 
 repository-code: "https://github.com/abruanspace/HeylandCircle"
+url: "https://github.com/abruanspace/HeylandCircle"
 
 license: MIT
-
-version: 0.2.0
+version: "0.2.0"
 date-released: 2026-09-11
 
 abstract: >
-  HeylandCircle is an open-source Python package for
-  constructing and analyzing Heyland circle diagrams
-  for induction machines using classical geometric methods.
+  HeylandCircle is an open-source Python package for constructing and
+  analyzing Heyland circle diagrams for three-phase induction machines.
+  It supports circle construction from machine parameters and test data,
+  including equivalent-circuit parameter extraction and visualization
+  of induction-machine performance characteristics.
 
 keywords:
   - induction machines
   - electrical machines
-  - heyland circle
+  - Heyland circle
   - circle diagram
-  - power systems
+  - equivalent circuit
+  - parameter extraction
   - engineering education
   - scientific computing
 
 preferred-citation:
   type: article
   authors:
-    - family-names: Gupta
-      given-names: Anubhav
-    - family-names: Gupta
-      given-names: Abhinav
-  title: "HeylandCircle: A Computational Framework for the Geometric Reconstruction of the Heyland Circle Diagram"
+    - family-names: "Gupta"
+      given-names: "Anubhav"
+    - family-names: "Gupta"
+      given-names: "Abhinav"
+  title: >
+    HeylandCircle: A Computational Framework for the Geometric
+    Reconstruction of the Heyland Circle Diagram
   year: 2025
   identifiers:
     - type: other
       value: "arXiv:2512.20015"
       description: "arXiv identifier"
+  url: "https://arxiv.org/abs/2512.20015"
