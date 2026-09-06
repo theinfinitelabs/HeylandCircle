@@ -1,9 +1,7 @@
-# HeylandCircle
-
 <p align="center">
   <img src="docs/source/_static/heylandcircle_logo.svg"
        alt="HeylandCircle logo"
-       width="240">
+       width="120">
 </p>
 
 <h1 align="center">HeylandCircle</h1>
