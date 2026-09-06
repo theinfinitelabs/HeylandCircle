@@ -1,6 +1,6 @@
 # RELEASE NOTES
 
-## HeylandCircle v0.2.0 (Unreleased)
+## HeylandCircle v0.2.0 (Sep 11, 2026)
 - Equivalent circuit: Parameter extraction from test data implemented, pytest and example script (motor_equivalent_circuit.py) added
 - Circle diagram example figure: Included in the README
 - Fixed: Naming consistency in MachineTestData (Isc → I_sc)
