@@ -98,8 +98,8 @@ Citation metadata is also provided in [CITATION.cff](https://github.com/abruansp
 1. Langsdorf, A.; "**[Theory of Alternating Current Machines](https://books.google.com/books?id=zKVd780XHGcC&newbks=0&hl=en&source=newbks_fb)**," New York, NY: McGraw-Hill Book Company, 1937
 1. Thereja, B. L.; and Thereja, A.K.; "**[A Textbook of Electrical Technology](https://search.worldcat.org/title/78683746)**," New Delhi, India: S. Chand Publishing, 2014
 1. Fritzgerald, A.; Kingsley Jr., C.; and Umans, S.; "**[Electric Machinery](https://search.worldcat.org/title/49726399)**," 6th ed., New York, NY: McGraw-Hill, 2002
-1. D. Kothari and I. Nagrath, "**[Electric Machines.](https://search.worldcat.org/title/56399794)**". McGraw-Hill, 4th ed., 2011.
-1. P. C. Krause, O. Wasynczuk, S. Sudhoff, and S. Pekarek, "**[Analysis of Electric Machinery and Drive Systems.](https://search.worldcat.org/title/1164444813)**". Wiley-IEEE Press, 3rd ed., 2013.
+1. Kothari, D.; and Nagrath, I.; "**[Electric Machines.](https://search.worldcat.org/title/56399794)**" 4th ed., New Delhi: Tata McGraw-Hill, 2011.
+1. Krause, P. C.; Wasynczuk, O.; Sudhoff, S.; and Pekarek, S.; "**[Analysis of Electric Machinery and Drive Systems.](https://search.worldcat.org/title/1164444813)**" 3rd ed., New York, NY: Wiley-IEEE Press, 2013.
 1. Carpaneto, E.; and Savio, S.; “**A Teaching Tool for the Heyland Circle Diagram using Numerical Simulation**,” IEEE Transactions on Education, vol. 45, no. 3, pp. 263–270, 2002.
 1. Gupta, A.; and Gupta, A.; "**[Testing of Transformers and Induction Machines.](https://search.worldcat.org/title/818848055)**" 1st ed., Charleston, SC: CreateSpace, 2012
 1. Gupta, A.; "**[Möbius Transformations and the Analytic-Geometric Reconstruction of the Induction-Machine Circle Diagram.](https://arxiv.org/abs/2512.08302)**" In arXiv:2512.08302, 2025 [math.DS]
