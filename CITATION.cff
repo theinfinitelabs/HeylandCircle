@@ -33,12 +33,15 @@ keywords:
   - scientific computing
 
 preferred-citation:
-  type: software
+  type: article
   authors:
-    - family-names: "Gupta"
-      given-names: "Anubhav"
-    - family-names: "Gupta"
-      given-names: "Abhinav"
-  title: "HeylandCircle"
-  version: 0.2.0
-  year: 2026
+    - family-names: Gupta
+      given-names: Anubhav
+    - family-names: Gupta
+      given-names: Abhinav
+  title: "HeylandCircle: A Computational Framework for the Geometric Reconstruction of the Heyland Circle Diagram"
+  year: 2025
+  identifiers:
+    - type: other
+      value: "arXiv:2512.20015"
+      description: "arXiv identifier"
