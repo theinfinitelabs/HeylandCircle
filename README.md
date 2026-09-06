@@ -30,7 +30,7 @@ HeylandCircle is a lightweight, modular Python tool for constructing and analyzi
 Clone the repository:
 
 ```bash
-git clone https://github.com/theinfinitelabs/HeylandCircle.git
+git clone https://github.com/abruanspace/HeylandCircle.git
 cd HeylandCircle
 ```
 
