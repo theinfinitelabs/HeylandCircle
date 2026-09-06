@@ -9,5 +9,5 @@ Standalone Example Scripts
 .. toctree::
     :maxdepth: 1
 
-    Motor Circle Diagram <examples/motor_circle_diagram>
-    Motor Equivalent Circuit <examples/motor_equivalent_circuit>
+    Motor Circle Diagram <motor_circle_diagram>
+    Motor Equivalent Circuit <motor_equivalent_circuit>

@@ -62,7 +62,7 @@ Run the example script from the repository root:
    python examples/motor_circle_diagram.py
 
 Run the tests
-------------
+-------------
 
 Install pytest if it is not already available, then run the test suite:
 
