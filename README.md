@@ -1,15 +1,7 @@
-<p align="center">
-  <img src="docs/source/_static/heylandcircle_logo.svg"
-       alt="HeylandCircle logo"
-       width="120">
-</p>
-
-<h1 align="center">HeylandCircle</h1>
-
-<p align="center">
-  A computational framework for constructing and analyzing
-  Heyland circle diagrams.
-</p>
+<h1>
+  <img src="docs/source/_static/heylandcircle_logo.svg" alt="" width="42" />
+  HeylandCircle
+</h1>
 
 [![Tests](https://github.com/abruanspace/HeylandCircle/actions/workflows/ci.yml/badge.svg)](https://github.com/abruanspace/HeylandCircle/actions)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/abruanspace/HeylandCircle/main)
