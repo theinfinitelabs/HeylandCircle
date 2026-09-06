@@ -96,10 +96,12 @@ Citation metadata is also provided in [CITATION.cff](https://github.com/abruansp
 
 1. Heyland, A.; "**[A Graphical Treatment of the Induction Motor](https://archive.org/details/graphicaltreatme00heylrich/page/n3/mode/2up)**," New York, NY: McGraw Publishing Company, 1906
 1. Langsdorf, A.; "**[Theory of Alternating Current Machines](https://books.google.com/books?id=zKVd780XHGcC&newbks=0&hl=en&source=newbks_fb)**," New York, NY: McGraw-Hill Book Company, 1937
-1. Thereja, B. L.; and Thereja, A.K.; "**[A Textbook of Electrical Technology](https://www.amazon.com/dp/8121924413)**," New Delhi, India: S. Chand Publishing, 2014
-1. Fritzgerald, A.; Kingsley Jr., C.; and Umans, S.; "**[Electric Machinery](https://www.amazon.com/Electric-Machinery-Fitzgerald-Kingsley-Umans/dp/0070530394)**," 6th ed., New York, NY: McGraw-Hill, 2002
+1. Thereja, B. L.; and Thereja, A.K.; "**[A Textbook of Electrical Technology](https://search.worldcat.org/title/78683746)**," New Delhi, India: S. Chand Publishing, 2014
+1. Fritzgerald, A.; Kingsley Jr., C.; and Umans, S.; "**[Electric Machinery](https://search.worldcat.org/title/49726399)**," 6th ed., New York, NY: McGraw-Hill, 2002
+1. D. Kothari and I. Nagrath, "**[Electric Machines.](https://search.worldcat.org/title/56399794)**". McGraw-Hill, 4th ed., 2011.
+1. P. C. Krause, O. Wasynczuk, S. Sudhoff, and S. Pekarek, "**[Analysis of Electric Machinery and Drive Systems.](https://search.worldcat.org/title/1164444813)**". Wiley-IEEE Press, 3rd ed., 2013.
 1. Carpaneto, E.; and Savio, S.; “**A Teaching Tool for the Heyland Circle Diagram using Numerical Simulation**,” IEEE Transactions on Education, vol. 45, no. 3, pp. 263–270, 2002.
-1. Gupta, A.; and Gupta, A.; "**[Testing of Transformers and Induction Machines.](https://www.amazon.com/dp/B00A63NBTI)**" 1st ed., Charleston, SC: CreateSpace, 2012
+1. Gupta, A.; and Gupta, A.; "**[Testing of Transformers and Induction Machines.](https://search.worldcat.org/title/818848055)**" 1st ed., Charleston, SC: CreateSpace, 2012
 1. Gupta, A.; "**[Möbius Transformations and the Analytic-Geometric Reconstruction of the Induction-Machine Circle Diagram.](https://arxiv.org/abs/2512.08302)**" In arXiv:2512.08302, 2025 [math.DS]
 1. Gupta, A.; and Gupta, A.; "**[HeylandCircle: A Computational Framework for the Geometric Reconstruction of the Heyland Circle Diagram.](https://arxiv.org/abs/2512.20015)**" In arXiv:2512.20015, 2025 [eess.SY]
-1. Jurkovic, S.; "**[Induction Motor Parameters Extraction.](https://d1wqtxts1xzle7.cloudfront.net/68724620/motor_parameters-libre.pdf?1628857902=&response-content-disposition=inline%3B+filename%3DINDUCTION_MOTOR_PARAMETERS_EXTRACTION.pdf&Expires=1788664089&Signature=RY4duSkC~jJDIwuuXePWhcCP7Ap6PxOTVeMGRUSSwky53yEjkqcr7w-2pRxe4iI1t7pXwhlgcroq4SEGarmb4~UX-K1f4b2ZhlWYTIY-LjMbxaTtP6akjEy5WJoDL1eQLBaljd-0TocbMLBYmJo1w0B~yS0FliNTNnwz-iwNyb1gJUAW9049CChJJmrsKrCAJ6gSw4W43kxlvENOoeSyxlqydAxHvbG5mrYuPTjP1InUK14SJvIR6TACGMldj8u1vWJtfmPHQgJt6QK38IkqDtNyh-23Sx8GD4SBtXUDbBnwDlEfgiwxbGVcP8Ho6aBNFJhxC3ax5k4UwwknWt7boA__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA)**", Educypedia-Electronics, 2014
+1. Jurkovic, S.; "**[Induction Motor Parameters Extraction.](https://web.mit.edu/kirtley/binlustuff/literature/electric%20machine/motor-parameters.pdf)**", Educypedia-Electronics, 2014
