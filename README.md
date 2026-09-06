@@ -1,5 +1,18 @@
 # HeylandCircle
 
+<p align="center">
+  <img src="docs/source/_static/heylandcircle_logo.svg"
+       alt="HeylandCircle logo"
+       width="240">
+</p>
+
+<h1 align="center">HeylandCircle</h1>
+
+<p align="center">
+  A computational framework for constructing and analyzing
+  Heyland circle diagrams.
+</p>
+
 [![Tests](https://github.com/abruanspace/HeylandCircle/actions/workflows/ci.yml/badge.svg)](https://github.com/abruanspace/HeylandCircle/actions)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/abruanspace/HeylandCircle/main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -68,7 +81,7 @@ python examples/motor_circle_diagram.py
 
 Complete installation instructions, API documentation, theory, and examples are available in the HeylandCircle documentation.
 
-For release history, see RELEASENOTES.md.
+For release history, see [RELEASENOTES.md](https://github.com/abruanspace/HeylandCircle/blob/main/RELEASE_NOTES.md).
 
 ## Citation
 
@@ -87,7 +100,7 @@ If you use HeylandCircle in academic work, please cite:
       url={https://arxiv.org/abs/2512.20015},
 }
 ```
-Citation metadata is also provided in CITATION.cff.
+Citation metadata is also provided in [CITATION.cff](https://github.com/abruanspace/HeylandCircle/blob/main/CITATION.cff).
 
 ## References
 
